@@ -23,7 +23,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-    background-color: #30BFBF;
+    background-color: #ABE098;
 }
 
 .section-title {
@@ -282,14 +282,14 @@ body {
 
 .btn-login {
 	color: #fbfdff;
-	background: #a7e245;
+	background: #2e6b6b;
 	transform: translateX(-30%);
 }
 
 .btn-signup {
-	color: #a7e245;
-	background: #fbfdff;
-	box-shadow: inset 0 0 0 2px #a7e245;
+	color: white;
+	background: #2e6b6b;
+	/* box-shadow: inset 0 0 0 2px #a7e245; */
 	transform: translateX(30%);
 }
 
@@ -350,7 +350,7 @@ body {
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="cart.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="login.html">Login/Signup</a></li>
                     </ul>
@@ -369,16 +369,16 @@ body {
           Login
           <span class="underline"></span>
         </button>
-        <form class="form form-login">
+        <form class="form form-login" style="box-shadow: 5px 5px 5px 5px #75a364;">
           <fieldset>
             <legend>Please, enter your email and password for login.</legend>
             <div class="input-block">
               <label for="login-email">E-mail</label>
-              <input id="login-email" type="email" required>
+              <input id="login-email" type="email" name="email" style="border-radius: 15px;" required>
             </div>
             <div class="input-block">
               <label for="login-password">Password</label>
-              <input id="login-password" type="password" required>
+              <input id="login-password" type="password" name="password"  style="border-radius: 15px;" required>
             </div>
           </fieldset>
           <button type="submit" class="btn-login">Login</button>
@@ -389,20 +389,20 @@ body {
           Sign Up
           <span class="underline"></span>
         </button>
-        <form class="form form-signup">
+        <form class="form form-signup" style="box-shadow: 5px 5px 5px 5px #75a364;">
           <fieldset>
             <legend>Please, enter your email, password and password confirmation for sign up.</legend>
             <div class="input-block">
               <label for="signup-email">E-mail</label>
-              <input id="signup-email" type="email" required>
+              <input id="signup-email" type="email" name="email" style="border-radius: 15px;" required>
             </div>
             <div class="input-block">
               <label for="signup-password">Password</label>
-              <input id="signup-password" type="password" required>
+              <input id="signup-password" type="password" name="password" style="border-radius: 15px;" required>
             </div>
             <div class="input-block">
               <label for="signup-password-confirm">Confirm password</label>
-              <input id="signup-password-confirm" type="password" required>
+              <input id="signup-password-confirm" type="password" name="password" style="border-radius: 15px;" required>
             </div>
           </fieldset>
           <button type="submit" class="btn-signup">Continue</button>
