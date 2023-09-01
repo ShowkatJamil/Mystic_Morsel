@@ -1,0 +1,85 @@
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 40px 0px 40px 0px;
+    border: black;
+}
+
+/* Style for table header cells */
+th {
+    background-color: #b0b435;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Style for table data cells */
+td {
+    padding: 8px;
+}
+
+/* Alternating row background colors for better readability */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Apply some styling to the div containing the table */
+#orderTableDiv {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+    overflow-x: auto;
+    max-width: 100%;
+    width: 100%
+}
+
+/* styles.css */
+
+/* Styling for the coupon buttons container */
+.coupon-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 40px 0px 20px 0px;
+
+}
+
+/* Styling for individual buttons */
+#button1 {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: 2px ;
+    border-radius: 10px;
+    box-shadow:#080808 2px 2px; 
+    background-color: #B0FC38;
+    color: black;
+}
+
+#button2 {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: 2px ;
+    border-radius: 10px;
+    box-shadow:#080808 2px 2px;
+     background-color: #F1202B;  
+}
+
+.coupon-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.btn-update{
+    background-color: #00CCFF; 
+    border: 2px black;
+    border-radius: 10px; 
+    padding: 5px 20px 5px 20px;
+}
