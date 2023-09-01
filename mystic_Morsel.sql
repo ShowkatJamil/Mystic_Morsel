@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mystic_morsel`
+-- Database: `mystic_Morsel`
 --
 
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `admin_t` (
   `email` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`email`, `password`) VALUES
+INSERT INTO `admin_t` (`email`, `password`) VALUES
 ('admin@gmail.com', '1234');
 
 -- --------------------------------------------------------
@@ -45,7 +45,7 @@ INSERT INTO `admin` (`email`, `password`) VALUES
 -- Table structure for table `contact_us`
 --
 
-CREATE TABLE `contact_us` (
+CREATE TABLE `contact_us_t` (
   `name` varchar(50) NOT NULL,
   `email` varchar(32) NOT NULL,
   `subject` varchar(100) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `contact_us` (
 -- Table structure for table `coupon`
 --
 
-CREATE TABLE `coupon` (
+CREATE TABLE `coupon_t` (
   `coupon_code` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -68,7 +68,7 @@ CREATE TABLE `coupon` (
 -- Table structure for table `news_letter`
 --
 
-CREATE TABLE `news_letter` (
+CREATE TABLE `news_letter_t` (
   `email` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -78,7 +78,7 @@ CREATE TABLE `news_letter` (
 -- Table structure for table `order`
 --
 
-CREATE TABLE `order` (
+CREATE TABLE `order_t` (
   `order_id` varchar(32) NOT NULL,
   `quantity` int(32) NOT NULL,
   `total_price` varchar(32) NOT NULL,
@@ -93,7 +93,7 @@ CREATE TABLE `order` (
 -- Table structure for table `product`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE `product_t` (
   `product_name` varchar(200) NOT NULL,
   `product_description` varchar(200) NOT NULL,
   `product_price` varchar(200) NOT NULL
@@ -103,7 +103,7 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_name`, `product_description`, `product_price`) VALUES
+INSERT INTO `product_t` (`product_name`, `product_description`, `product_price`) VALUES
 ('Cinnamon Toast Donut\r\n', 'The Cinnamon Toast Donut is a delightful pastry that combines the comforting flavors of warm cinnamon and toasted sugar in a circular, fluffy creation. This delectable donut features a soft and airy i', '180'),
 ('Japanese Souffle Cheese Cake', 'The Japanese Souffle Cheesecake is a delicate dessert that captures the essence of both cheesecake and souffle. This culinary masterpiece is known for its exceptional lightness and airy texture. With ', '750/500gm'),
 ('Kitkat Eminem Chocolate Cake', 'The Japanese Souffle Cheesecake is a delicate dessert that captures the essence of both cheesecake and souffle. This culinary masterpiece is known for its exceptional lightness and airy texture. With ', '750/500gm'),
@@ -115,7 +115,7 @@ INSERT INTO `product` (`product_name`, `product_description`, `product_price`) V
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `user_t` (
   `email` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL,
   `phone_number` int(32) NOT NULL
@@ -125,7 +125,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`email`, `password`, `phone_number`) VALUES
+INSERT INTO `user_t` (`email`, `password`, `phone_number`) VALUES
 ('showkatjamil2012@gmail.com', '1234', 01521436539),
 ('tasnimnajifa60@gmail.com', '1234', 01749853292),
 ('ashimsaha040@gmail.com', '1234', 01686780440),
@@ -138,7 +138,7 @@ INSERT INTO `user` (`email`, `password`, `phone_number`) VALUES
 --
 -- Indexes for table `order`
 --
-ALTER TABLE `order`
+ALTER TABLE `order_t`
   ADD PRIMARY KEY (`order_id`);
 COMMIT;
 

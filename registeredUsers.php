@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+include 'connect.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     
@@ -9,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>Coupons</title>
+    <title>Registered Users</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -50,18 +57,18 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="adminDashboard.html">Orders</a></li>
-                        <li class="nav-item"><a class="nav-link" href="updateProducts.html">Update Products</a></li>
-                        <li class="nav-item"><a class="nav-link" href="coupons.html">Coupons</a></li>
-                        <li class="nav-item"><a class="nav-link" href="registeredUsers.html">Registered Users</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Logout</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="adminDashboard.php">Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="updateProducts.php">Update Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="coupons.php">Coupons</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registeredUsers.php">Registered Users</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -80,42 +87,27 @@
                     <h2>Dashboard</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Coupons</li>
+                        <li class="breadcrumb-item active">Registered Users</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
     <!-- End All Title Box -->
-    <div class="coupon-buttons">
-        <button id="button1"><b>Add Coupon</b></button>
-        <button id="button2"><b>Delete Coupon </b></button>
-    </div>
 
     <div id="orderTableDiv">
         <table border="1">
             <tr>
-                <th>Select</th>
-                <th>Coupon Codes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>CODE123</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>SALE456</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>DISCOUNT789</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>CODE123</td>
-              </tr>
+                <th>Seria No.</th>
+                <th>Email</th>
+                <th>Phone Number</th>>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>tasnimnajifa60@gmail.com</td>
+                <td>01749953292</td>
+            </tr>
+            <!-- Add more rows as needed -->
         </table>
     </div>
 

@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     
@@ -50,18 +55,18 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="adminDashboard.html">Orders</a></li>
-                        <li class="nav-item"><a class="nav-link" href="updateProducts.html">Update Products</a></li>
-                        <li class="nav-item"><a class="nav-link" href="coupons.html">Coupons</a></li>
-                        <li class="nav-item"><a class="nav-link" href="registeredUsers.html">Registered Users</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Logout</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="adminDashboard.php">Orders</a></li>
+                        <li class="nav-item"><a class="nav-link" href="updateProducts.php">Update Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="coupons.php">Coupons</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registeredUsers.php">Registered Users</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -80,7 +85,7 @@
                     <h2>Dashboard</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Orders</li>
+                        <li class="breadcrumb-item active">Update Products</li>
                     </ul>
                 </div>
             </div>
@@ -91,35 +96,56 @@
     <div id="orderTableDiv">
         <table border="1">
             <tr>
-                <th>Order ID</th>
-                <th>Email</th>
-                <th>Phone Number</th>
+                <th>Upload Image</th>
                 <th>Product Name</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
+                <th>Product Description</th>
+                <th>Product Price</th>
+                <th>Update</th>
             </tr>
             <tr>
-                <td>1</td>
-                <td>tasnimnajifa60@gmail.com</td>
-                <td>01749953292</td>
-                <td>Cinnamon Toast Donut, Japanese Souffle Cheese Cake</td>
-                <td>3, 2</td>
-                <td>BDT 2040.00</td>
+                <td><input type="file"></td>
+                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
+                <td><input type="text" value="3, 2"></td>
+                <td><input type="text" value="BDT 2040.00"></td>
+                <td><button class="btn-update">Update</button></td>
             </tr>
 
             <tr>
-                <td>1</td>
-                <td>showkatjamil2012@gmail.com</td>
-                <td>01521436539</td>
-                <td>Cinnamon Toast Donut, Japanese Souffle Cheese Cake</td>
-                <td>3, 2</td>
-                <td>BDT 2040.00</td>
+                <td><input type="file"></td>
+                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
+                <td><input type="text" value="3, 2"></td>
+                <td><input type="text" value="BDT 2040.00"></td>
+                <td><button class="btn-update">Update</button></td>
             </tr>
-           
+
+            <tr>
+                <td><input type="file"></td>
+                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
+                <td><input type="text" value="3, 2"></td>
+                <td><input type="text" value="BDT 2040.00"></td>
+                <td><button class="btn-update">Update</button></td>
+            </tr>
+
+            <tr>
+                <td><input type="file"></td>
+                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
+                <td><input type="text" value="3, 2"></td>
+                <td><input type="text" value="BDT 2040.00"></td>
+                <td><button class="btn-update">Update</button></td>
+            </tr>
+            <tr>
+                <td><input type="file"></td>
+                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
+                <td><input type="text" value="3, 2"></td>
+                <td><input type="text" value="BDT 2040.00"></td>
+                <td><button class="btn-update">Update</button></td>
+            </tr>
             
             <!-- Add more rows as needed -->
         </table>
     </div>
+    
+    
 
 
     <div class="footer-copyright">

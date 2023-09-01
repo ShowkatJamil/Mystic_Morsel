@@ -295,6 +295,41 @@ body {
 
 </style>
 
+
+<?php
+
+$invalid=0;
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    
+    include 'connect.php';
+    
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+
+  if($email=='admin@gmail.com' && $password == '1234'){
+    $sql="SELECT * from admin_t where email='$email' and password='$password'";
+    $result=mysqli_query($conn,$sql);
+    if($result){
+        $num=mysqli_num_rows($result);
+        if($num>0){
+          $invalid=0;
+            session_start();
+           
+            $_SESSION['email']=$email;
+            
+			echo "<script>window.location.href ='adminDashboard.php'</script>";	
+            // header('adminDashboard.php');
+        }
+     }
+  }    
+
+        else{
+            $invalid=1;
+        }
+  }
+  ?>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -341,18 +376,18 @@ body {
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html">Login/Signup</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.php">Login/Signup</a></li>
                     </ul>
                 </div>
             </div>
@@ -369,7 +404,7 @@ body {
           Login
           <span class="underline"></span>
         </button>
-        <form class="form form-login" style="box-shadow: 5px 5px 5px 5px #75a364;">
+        <form action="#" method="post" class="form form-login" style="box-shadow: 5px 5px 5px 5px #75a364;">
           <fieldset>
             <legend>Please, enter your email and password for login.</legend>
             <div class="input-block">

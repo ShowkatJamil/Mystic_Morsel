@@ -1,3 +1,8 @@
+<?php
+include 'connect.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -48,18 +53,18 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html">Login/Signup</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.php">Login/Signup</a></li>
                     </ul>
                 </div>
             </div>
@@ -130,19 +135,19 @@
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="shop-cat-box">
                             <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                            <a class="btn hvr-hover" href="donuts.html">Donuts</a>
+                            <a class="btn hvr-hover" href="products.php">Donuts</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="shop-cat-box">
                             <img class="img-fluid" src="images/categories_img_02.jpg" alt="" />
-                            <a class="btn hvr-hover" href="cakes.html">Cakes</a>
+                            <a class="btn hvr-hover" href="products.php">Cakes</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="shop-cat-box">
                             <img class="img-fluid" src="images/categories_img_03.jpg" alt="" />
-                            <a class="btn hvr-hover" href="brownies.html">Brownies</a>
+                            <a class="btn hvr-hover" href="products.php">Brownies</a>
                         </div>
                     </div>
                 </div>
@@ -200,7 +205,7 @@
                             <img src="images/instagram-img-03.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="donuts.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="products.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                 </ul>
                             </div>
                         </div> 
@@ -220,7 +225,7 @@
                             <img src="images/instagram-img-07.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="cakes.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="products.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -240,7 +245,7 @@
                             <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="donuts.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="products.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -260,7 +265,7 @@
                             <img src="images/instagram-img-05.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="donuts.html" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="products.php" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                 </ul>
                             </div>
                         </div>
