@@ -117,21 +117,6 @@ include 'connect.php';
                         <h5> BDT 180/Pc</h5>
 						<h4>Short Description:</h4>
 						<p>The Cinnamon Toast Donut is a delightful pastry that combines the comforting flavors of warm cinnamon and toasted sugar in a circular, fluffy creation. This delectable donut features a soft and airy interior, with a golden-brown exterior that's coated in a generous layer of cinnamon-infused sugar. The marriage of sweet and slightly spicy cinnamon, complemented by the subtle crunch of the toasted sugar, creates a harmonious blend of textures and tastes. Whether enjoyed with a cup of coffee in the morning or as a special treat throughout the day. </p>
-						<ul>
-							<li>
-								<div class="form-group quantity-box">
-									<label class="control-label">Quantity</label>
-									<input class="form-control" value="0" min="0" max="5" type="number">
-								</div>
-							</li>
-						</ul>
-
-						<div class="price-box-bar">
-							<div class="cart-and-bay-btn">
-								<a class="btn hvr-hover" data-fancybox-close="" href="#">Add to cart</a>
-							</div>
-						</div>
-
                     </div>
                 </div>
             </div>
@@ -158,21 +143,6 @@ include 'connect.php';
 						<p>The Japanese Souffle Cheesecake is a delicate dessert that captures the essence of both cheesecake and souffle. This culinary masterpiece is known for its exceptional lightness and airy texture.
                              With a velvety and smooth cream cheese base, this cake is crafted to achieve a melt-in-your-mouth sensation. What sets the Japanese Souffle Cheesecake apart is its unique baking technique, which incorporates a gentle folding of whipped egg whites into the cream cheese batter. This process imparts a remarkable fluffiness and
                               a cloud-like consistency to the cake, resulting in a delightful contrast to the rich, creamy flavors. </p>
-						<ul>
-							<li>
-								<div class="form-group quantity-box">
-									<label class="control-label">Quantity</label>
-									<input class="form-control" value="0" min="0" max="5" type="number">
-								</div>
-							</li>
-						</ul>
-
-						<div class="price-box-bar">
-							<div class="cart-and-bay-btn">
-								<a class="btn hvr-hover" data-fancybox-close="" href="#">Add to cart</a>
-							</div>
-						</div>
-
                     </div>
                 </div>
             </div>
@@ -197,21 +167,6 @@ include 'connect.php';
 						<p>The Japanese Souffle Cheesecake is a delicate dessert that captures the essence of both cheesecake and souffle. This culinary masterpiece is known for its exceptional lightness and airy texture.
                              With a velvety and smooth cream cheese base, this cake is crafted to achieve a melt-in-your-mouth sensation. What sets the Japanese Souffle Cheesecake apart is its unique baking technique, which incorporates a gentle folding of whipped egg whites into the cream cheese batter. This process imparts a remarkable fluffiness and
                               a cloud-like consistency to the cake, resulting in a delightful contrast to the rich, creamy flavors. </p>
-						<ul>
-							<li>
-								<div class="form-group quantity-box">
-									<label class="control-label">Quantity</label>
-									<input class="form-control" value="0" min="0" max="5" type="number">
-								</div>
-							</li>
-						</ul>
-
-						<div class="price-box-bar">
-							<div class="cart-and-bay-btn">
-								<a class="btn hvr-hover" data-fancybox-close="" href="#">Add to cart</a>
-							</div>
-						</div>
-
                     </div>
                 </div>
             </div>
@@ -237,21 +192,6 @@ include 'connect.php';
 						<p>The Vanilla Meringue Donut is a delectable treat that perfectly combines the classic flavors of vanilla and the delicate sweetness of meringue. This artisanal donut features a light and fluffy interior, adorned with a creamy vanilla glaze that adds a rich and comforting touch.
 
                             What sets the Vanilla Meringue Donut apart is its crown of airy meringue, meticulously whipped to a glossy perfection and gently toasted to create a delicate golden hue. This cloud-like topping adds a delightful contrast of textures, with the crisp outer layer yielding to a melt-in-your-mouth experience beneath.</p>
-						<ul>
-							<li>
-								<div class="form-group quantity-box">
-									<label class="control-label">Quantity</label>
-									<input class="form-control" value="0" min="0" max="5" type="number">
-								</div>
-							</li>
-						</ul>
-
-						<div class="price-box-bar">
-							<div class="cart-and-bay-btn">
-								<a class="btn hvr-hover" data-fancybox-close="" href="#">Add to cart</a>
-							</div>
-						</div>
-
                     </div>
                 </div>
             </div>
@@ -260,51 +200,7 @@ include 'connect.php';
         </div>
     </div>
     <!-- end of products -->
-
-            <div class="row my-5">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="coupon-box">
-                        <div class="input-group input-group-sm">
-                            <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
-                            <div class="input-group-append">
-                                <button class="btn btn-theme" type="button">Apply Coupon</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="update-box">
-                        <input value="Update Cart" type="submit">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row my-5">
-                <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="order-box">
-                        <h3>Order summary</h3>
-                        <div class="d-flex">
-                            <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> BDT 2100 </div>
-                        </div>
-                        <hr class="my-1">
-                        <div class="d-flex">
-                            <h4>Coupon Discount</h4>
-                            <div class="ml-auto font-weight-bold"> BDT 20 </div>
-                        </div>
-                        <div class="d-flex">
-                            <h4>Shipping Cost</h4>
-                            <div class="ml-auto font-weight-bold"> Free </div>
-                        </div>
-                        <hr>
-                        <div class="d-flex gr-total">
-                            <h5>Grand Total</h5>
-                            <div class="ml-auto h5"> BDT 2120 </div>
-                        </div>
-                        <hr> </div>
-                </div>
-                <div class="col-12 d-flex shopping-box"><a href="checkoutForm.php" class="ml-auto btn hvr-hover">Checkout</a> </div>
+                <div class="col-12 d-flex shopping-box"><a href="checkoutForm.php" class="ml-auto btn hvr-hover">Order Form</a> </div>
             </div>
 
         </div>

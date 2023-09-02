@@ -81,7 +81,6 @@ CREATE TABLE `news_letter_t` (
 CREATE TABLE `order_t` (
   `order_id` varchar(32) NOT NULL,
   `quantity` int(32) NOT NULL,
-  `total_price` varchar(32) NOT NULL,
   `user_email` varchar(32) NOT NULL,
   `phone_number` varchar(32) NOT NULL,
   `product_name` varchar(100) NOT NULL

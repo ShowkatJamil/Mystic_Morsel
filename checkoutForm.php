@@ -103,6 +103,14 @@ include 'connect.php';
                 </div>
 
                 <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="phone_number" placeholder="Phone Number">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="products" placeholder="Products">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
@@ -111,17 +119,10 @@ include 'connect.php';
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="phone_number" placeholder="Phone Number">
+                    <input class="input100" type="text" name="quantity" placeholder="Quantity">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="total_price" placeholder="Total Price">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-                        <i class="fa fa-money" aria-hidden="true"></i>
+                        <i class="fa fa-calculator" aria-hidden="true"></i>
                     </span>
                 </div>
                 
