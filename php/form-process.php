@@ -1,6 +1,7 @@
 <?php
-
+// include 'connect.php';
 $errorMSG = "";
+
 
 // NAME
 if (empty($_POST["name"])) {
@@ -17,11 +18,7 @@ if (empty($_POST["email"])) {
 }
 
 // Subject
-if (empty($_POST["subject"])) {
-    $errorMSG .= "Subject is required ";
-} else {
-    $subject = $_POST["guest"];
-}
+
 
 // MESSAGE
 if (empty($_POST["message"])) {
@@ -31,8 +28,8 @@ if (empty($_POST["message"])) {
 }
 
 
-$EmailTo = "armanmia7@gmail.com";
-$Subject = "New Message Received";
+// $EmailTo = "armanmia7@gmail.com";
+// $Subject = "New Message Received";
 
 // prepare email body text
 $Body = "";
@@ -42,19 +39,14 @@ $Body .= "\n";
 $Body .= "Email: ";
 $Body .= $email;
 $Body .= "\n";
-$Body .= "guest: ";
-$Body .= $guest;
-$Body .= "\n";
-$Body .= "event: ";
-$Body .= $event;
 $Body .= "\n";
 $Body .= "Message: ";
 $Body .= $message;
 $Body .= "\n";
 
 // send email
-$success = mail($EmailTo, $Subject, $Body, "From:".$email);
-
+//$success = mail($EmailTo, $Subject, $Body, "From:".$email);
+$success=true;
 // redirect to success page
 if ($success && $errorMSG == ""){
    echo "success";
@@ -65,5 +57,3 @@ if ($success && $errorMSG == ""){
         echo $errorMSG;
     }
 }
-
-?>

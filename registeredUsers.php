@@ -95,21 +95,42 @@ include 'connect.php';
     </div>
     <!-- End All Title Box -->
 
-    <div id="orderTableDiv">
-        <table border="1">
-            <tr>
-                <th>Seria No.</th>
-                <th>Email</th>
-                <th>Phone Number</th>>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>tasnimnajifa60@gmail.com</td>
-                <td>01749953292</td>
-            </tr>
-            <!-- Add more rows as needed -->
+    <table class="table table-hover text center">
+            <thead class="table-dark">
+                <tr>
+                    <!-- <th scope="col">Backlog ID</th> -->
+                    <th scope="col">Serial No</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include 'connect.php';
+                // session_start();
+
+                $backlogData = "SELECT *
+                FROM user_t";
+                $result = mysqli_query($conn, $backlogData);
+                $serial = 1;
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+
+                    <tr>
+                        <!-- <th scope="row">1</th> -->
+                         <td><?php echo $serial++; ?></td> 
+                        <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['phone_number']; ?></td>
+                    </tr>
+
+                <?php
+                }
+
+                ?>
+
+            </tbody>
         </table>
-    </div>
 
 
     <div class="footer-copyright">

@@ -50,8 +50,8 @@ include 'connect.php';
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
+                        <i class="fa fa-bars"></i>
+                    </button>
                     <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
                 </div>
                 <!-- End Header Navigation -->
@@ -97,7 +97,7 @@ include 'connect.php';
                     <div class="contact-form-right">
                         <h2>GET IN TOUCH</h2>
                         <p>Have a question, idea, or just want to say hi? Don't hesitate to reach out to us! We love connecting with our community.</p>
-                        <form id="contactForm">
+                        <form method="POST">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -107,23 +107,23 @@ include 'connect.php';
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" name="name" placeholder="Subject" required data-error="Please enter your Subject">
+                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button text-center">
-                                        <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
+                                        <button class="btn hvr-hover" name="submit" id="submit" type="submit">Send Message</button>
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -131,8 +131,24 @@ include 'connect.php';
                             </div>
                         </form>
                     </div>
+              
                 </div>
-				<div class="col-lg-4 col-sm-12">
+                <?php
+
+if (isset($_POST['submit'])) {
+    
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $formQuery = "INSERT INTO contact_us_t (name, email, 
+                    subject, message) VALUES 
+                    ('$name', '$email', '$subject', '$message')";
+    $formTable = mysqli_query($conn, $formQuery);
+}
+?>
+                <div class="col-lg-4 col-sm-12">
                     <div class="contact-info-left">
                         <h2>CONTACT INFO</h2>
                         <p style="color: black;">Feel free to reach out to us with any inquiries, feedback, or collaboration opportunities. We value your input and look forward to connecting with you!</p>
@@ -246,52 +262,54 @@ include 'connect.php';
     <footer>
         <div class="footer-main">
             <div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Business Time</h3>
-							<ul class="list-time">
-								<li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Newsletter</h3>
-							<form method="post" class="newsletter-box">
-								<div class="form-group">
-									<input class="" type="email" name="newsletterEmail" placeholder="Email Address*" />
-									<i class="fa fa-envelope"></i>
-								</div>
-								<button class="btn hvr-hover" name="submit3" type="submit">Submit</button>
-							</form>
-						</div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Business Time</h3>
+                            <ul class="list-time">
+                                <li>Monday - Friday: 08.00am to 05.00pm</li>
+                                <li>Saturday: 10.00am to 08.00pm</li>
+                                <li>Sunday: <span>Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Newsletter</h3>
+                            <form method="post" class="newsletter-box">
+                                <div class="form-group">
+                                    <input class="" type="email" name="newsletterEmail" placeholder="Email Address*" />
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <button class="btn hvr-hover" name="submit3" type="submit">Submit</button>
+                            </form>
+                        </div>
 
                         <?php
-						if (isset($_POST['submit3'])) {
-							$newsletterEmail = $_POST['newsletterEmail'];
-							$newsletterQuery = "INSERT INTO 
+                        if (isset($_POST['submit3'])) {
+                            $newsletterEmail = $_POST['newsletterEmail'];
+                            $newsletterQuery = "INSERT INTO 
 						news_letter_t (email) VALUES 
-           				     ('$newsletterEmail')";
-							$newsletterTable = mysqli_query($conn, $newsletterQuery);
-						}
-						?>
+           				    ('$newsletterEmail')";
+                            $newsletterTable = mysqli_query($conn, $newsletterQuery);
+                        }
+                        ?>
 
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Social Media</h3>
-							<p>Follow us on our social media's to get delicious updates</p>
-							<ul>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Social Media</h3>
+                            <p>Follow us on our social media's to get delicious updates</p>
+                            <ul>
                                 <li><a href="https://www.facebook.com/profile.php?id=100063706166648" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
                                 <li><a href="https://www.instagram.com/mystic__morsel/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                             </ul>
-						</div>
-					</div>
-				</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
