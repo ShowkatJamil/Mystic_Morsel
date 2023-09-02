@@ -415,15 +415,26 @@ include 'connect.php';
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
 							<h3>Newsletter</h3>
-							<form class="newsletter-box">
+							<form method="post" class="newsletter-box">
 								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
+									<input class="" type="email" name="newsletterEmail" placeholder="Email Address*" />
 									<i class="fa fa-envelope"></i>
 								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
+								<button class="btn hvr-hover" name="submit3" type="submit">Submit</button>
 							</form>
 						</div>
+
+                        <?php
+						if (isset($_POST['submit3'])) {
+							$newsletterEmail = $_POST['newsletterEmail'];
+							$newsletterQuery = "INSERT INTO 
+						news_letter_t (email) VALUES 
+           				     ('$newsletterEmail')";
+							$newsletterTable = mysqli_query($conn, $newsletterQuery);
+						}
+						?>
 					</div>
+
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
 							<h3>Social Media</h3>
