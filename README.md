@@ -1,5 +1,5 @@
 
-# SPMS Version 4.0 (by Group 26)
+# Mystic Morsel Online Bakey Shop
 
 Mystic Morsel is an online cake and donut shop. It has a user and admin interface. Users can order and admin can check order info.
 
