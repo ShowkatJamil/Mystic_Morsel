@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+session_start();
 ?>
 
 
@@ -51,8 +52,8 @@ include 'connect.php';
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
+                        <i class="fa fa-bars"></i>
+                    </button>
                     <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
                 </div>
                 <!-- End Header Navigation -->
@@ -94,116 +95,136 @@ include 'connect.php';
     <!-- Start products  -->
     <div class="cart-box-main">
         <div class="container">
-    <div class="shop-detail-box-main">
-        <div class="container">
+            <div class="shop-detail-box-main">
+                <div class="container">
 
 
+                    <?php
+                    include 'connect.php';
+                    // session_start();
+                    $pro1 = "SELECT *
+                FROM product_t
+                WHERE product_id = 1";
+                    $result1 = mysqli_query($conn, $pro1);
+                    $proRow1 = mysqli_fetch_assoc($result1);
 
-            <!-- new product -->
-            <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-6">
-                    <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="images/instagram-img-03.jpg" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-03.jpg" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-03.jpg" alt="Third slide"> </div>
+                    $pro2 = "SELECT *
+                FROM product_t
+                WHERE product_id = 2";
+                    $result2 = mysqli_query($conn, $pro2);
+                    $proRow2 = mysqli_fetch_assoc($result2);
+
+                    $pro3 = "SELECT *
+                FROM product_t
+                WHERE product_id = 3";
+                    $result3 = mysqli_query($conn, $pro3);
+                    $proRow3 = mysqli_fetch_assoc($result3);
+
+                    $pro4 = "SELECT *
+                FROM product_t
+                WHERE product_id = 4";
+                    $result4 = mysqli_query($conn, $pro4);
+                    $proRow4 = mysqli_fetch_assoc($result4);
+                    ?>
+                    <!-- new product -->
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-md-6">
+                            <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item active"> <img class="d-block w-100" src="images/instagram-img-03.jpg" alt="First slide"> </div>
+                                    <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-03.jpg" alt="Second slide"> </div>
+                                    <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-03.jpg" alt="Third slide"> </div>
+                                </div>
+
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-                <div class="col-xl-7 col-lg-7 col-md-6">
-                    <div class="single-product-details">
-                        <h2>Cinnamon Toast Donut</h2>
-                        <h5> BDT 180/Pc</h5>
-						<h4>Short Description:</h4>
-						<p>The Cinnamon Toast Donut is a delightful pastry that combines the comforting flavors of warm cinnamon and toasted sugar in a circular, fluffy creation. This delectable donut features a soft and airy interior, with a golden-brown exterior that's coated in a generous layer of cinnamon-infused sugar. The marriage of sweet and slightly spicy cinnamon, complemented by the subtle crunch of the toasted sugar, creates a harmonious blend of textures and tastes. Whether enjoyed with a cup of coffee in the morning or as a special treat throughout the day. </p>
-                    </div>
-                </div>
-            </div>
-                        <!-- new product  ends-->
-
-
-                                    <!-- new product -->
-            <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-6">
-                    <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="images/instagram-img-07.jpg" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-07.jpg" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-07.jpg" alt="Third slide"> </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-xl-7 col-lg-7 col-md-6">
-                    <div class="single-product-details">
-                        <h2>Japanese Souffle Cheese Cake</h2>
-                        <h5> BDT 750/500gm</h5>
-						<h4>Short Description:</h4>
-						<p>The Japanese Souffle Cheesecake is a delicate dessert that captures the essence of both cheesecake and souffle. This culinary masterpiece is known for its exceptional lightness and airy texture.
-                             With a velvety and smooth cream cheese base, this cake is crafted to achieve a melt-in-your-mouth sensation. What sets the Japanese Souffle Cheesecake apart is its unique baking technique, which incorporates a gentle folding of whipped egg whites into the cream cheese batter. This process imparts a remarkable fluffiness and
-                              a cloud-like consistency to the cake, resulting in a delightful contrast to the rich, creamy flavors. </p>
-                    </div>
-                </div>
-            </div>
-            <!-- new product  ends-->
-
-                                    <!-- new product -->
-            <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-6">
-                    <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="images/img-pro-03.jpg" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/img-pro-03.jpg" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/img-pro-03.jpg" alt="Third slide"> </div>
+                        <div class="col-xl-7 col-lg-7 col-md-6">
+                            <div class="single-product-details">
+                                <h2><?php echo $proRow1['product_name']; ?></h2>
+                                <h5> BDT <?php echo $proRow1['product_price']; ?></h5>
+                                <h4>Short Description:</h4>
+                                <p><?php echo $proRow1['product_description']; ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-7 col-lg-7 col-md-6">
-                    <div class="single-product-details">
-                        <h2>Kitkat Eminem Chocolate Cake</h2>
-                        <h5> BDT 750/500gm</h5>
-						<h4>Short Description:</h4>
-						<p>The Japanese Souffle Cheesecake is a delicate dessert that captures the essence of both cheesecake and souffle. This culinary masterpiece is known for its exceptional lightness and airy texture.
-                             With a velvety and smooth cream cheese base, this cake is crafted to achieve a melt-in-your-mouth sensation. What sets the Japanese Souffle Cheesecake apart is its unique baking technique, which incorporates a gentle folding of whipped egg whites into the cream cheese batter. This process imparts a remarkable fluffiness and
-                              a cloud-like consistency to the cake, resulting in a delightful contrast to the rich, creamy flavors. </p>
-                    </div>
-                </div>
-            </div>
-            <!-- new product  ends-->
+                    <!-- new product  ends-->
 
-                                                <!-- new product -->
-            <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-6">
-                    <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="images/instagram-img-05.jpg" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-05.jpg" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-05.jpg" alt="Third slide"> </div>
+
+                    <!-- new product -->
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-md-6">
+                            <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item active"> <img class="d-block w-100" src="images/instagram-img-07.jpg" alt="First slide"> </div>
+                                    <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-07.jpg" alt="Second slide"> </div>
+                                    <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-07.jpg" alt="Third slide"> </div>
+                                </div>
+
+                            </div>
                         </div>
-
+                        <div class="col-xl-7 col-lg-7 col-md-6">
+                            <div class="single-product-details">
+                                <h2><?php echo $proRow2['product_name']; ?></h2>
+                                <h5> BDT <?php echo $proRow2['product_price']; ?></h5>
+                                <h4>Short Description:</h4>
+                                <p><?php echo $proRow2['product_description']; ?></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-7 col-lg-7 col-md-6">
-                    <div class="single-product-details">
-                        <h2>Vanilla Meringue Donut</h2>
-                        <h5> BDT 180/Pc</h5>
-						<h4>Short Description:</h4>
-						<p>The Vanilla Meringue Donut is a delectable treat that perfectly combines the classic flavors of vanilla and the delicate sweetness of meringue. This artisanal donut features a light and fluffy interior, adorned with a creamy vanilla glaze that adds a rich and comforting touch.
+                    <!-- new product  ends-->
 
-                            What sets the Vanilla Meringue Donut apart is its crown of airy meringue, meticulously whipped to a glossy perfection and gently toasted to create a delicate golden hue. This cloud-like topping adds a delightful contrast of textures, with the crisp outer layer yielding to a melt-in-your-mouth experience beneath.</p>
+                    <!-- new product -->
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-md-6">
+                            <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item active"> <img class="d-block w-100" src="images/img-pro-03.jpg" alt="First slide"> </div>
+                                    <div class="carousel-item"> <img class="d-block w-100" src="images/img-pro-03.jpg" alt="Second slide"> </div>
+                                    <div class="carousel-item"> <img class="d-block w-100" src="images/img-pro-03.jpg" alt="Third slide"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 col-md-6">
+                            <div class="single-product-details">
+                                <h2><?php echo $proRow3['product_name']; ?></h2>
+                                <h5> BDT <?php echo $proRow3['product_price']; ?></h5>
+                                <h4>Short Description:</h4>
+                                <p><?php echo $proRow3['product_description']; ?></p>
+                            </div>
+                        </div>
                     </div>
+                    <!-- new product  ends-->
+
+                    <!-- new product -->
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-md-6">
+                            <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item active"> <img class="d-block w-100" src="images/instagram-img-05.jpg" alt="First slide"> </div>
+                                    <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-05.jpg" alt="Second slide"> </div>
+                                    <div class="carousel-item"> <img class="d-block w-100" src="images/instagram-img-05.jpg" alt="Third slide"> </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 col-md-6">
+                            <div class="single-product-details">
+                                <h2><?php echo $proRow4['product_name']; ?></h2>
+                                <h5> BDT <?php echo $proRow4['product_price']; ?></h5>
+                                <h4>Short Description:</h4>
+                                <p><?php echo $proRow4['product_description']; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- new product  ends-->
+
                 </div>
             </div>
-            <!-- new product  ends-->
-
+            <!-- end of products -->
+            <div class="col-12 d-flex shopping-box"><a href="checkoutForm.php" class="ml-auto btn hvr-hover">Order Form</a> </div>
         </div>
+
     </div>
-    <!-- end of products -->
-                <div class="col-12 d-flex shopping-box"><a href="checkoutForm.php" class="ml-auto btn hvr-hover">Order Form</a> </div>
-            </div>
-
-        </div>
     </div>
     <!-- End Cart -->
 
@@ -299,52 +320,54 @@ include 'connect.php';
     <footer>
         <div class="footer-main">
             <div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Business Time</h3>
-							<ul class="list-time">
-								<li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Newsletter</h3>
-							<form method="post" class="newsletter-box">
-								<div class="form-group">
-									<input class="" type="email" name="newsletterEmail" placeholder="Email Address*" />
-									<i class="fa fa-envelope"></i>
-								</div>
-								<button class="btn hvr-hover" name="submit3" type="submit">Submit</button>
-							</form>
-						</div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Business Time</h3>
+                            <ul class="list-time">
+                                <li>Monday - Friday: 08.00am to 05.00pm</li>
+                                <li>Saturday: 10.00am to 08.00pm</li>
+                                <li>Sunday: <span>Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Newsletter</h3>
+                            <form method="post" class="newsletter-box">
+                                <div class="form-group">
+                                    <input class="" type="email" name="newsletterEmail" placeholder="Email Address*" />
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <button class="btn hvr-hover" name="submit3" type="submit">Submit</button>
+                            </form>
+                        </div>
 
                         <?php
-						if (isset($_POST['submit3'])) {
-							$newsletterEmail = $_POST['newsletterEmail'];
-							$newsletterQuery = "INSERT INTO 
+                        if (isset($_POST['submit3'])) {
+                            $newsletterEmail = $_POST['newsletterEmail'];
+                            $newsletterQuery = "INSERT INTO 
 						news_letter_t (email) VALUES 
            				     ('$newsletterEmail')";
-							$newsletterTable = mysqli_query($conn, $newsletterQuery);
-						}
-						?>
-					</div>
+                            $newsletterTable = mysqli_query($conn, $newsletterQuery);
+                        }
+                        ?>
+                    </div>
 
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Social Media</h3>
-							<p>Follow us on our social media's to get delicious updates</p>
-							<ul>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Social Media</h3>
+                            <p>Follow us on our social media's to get delicious updates</p>
+                            <ul>
                                 <li><a href="https://www.facebook.com/profile.php?id=100063706166648" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
                                 <li><a href="https://www.instagram.com/mystic__morsel/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                             </ul>
-						</div>
-					</div>
-				</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

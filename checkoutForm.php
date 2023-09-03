@@ -1,7 +1,11 @@
 <?php
 session_start();
 include 'connect.php';
-
+$user = "SELECT *
+FROM user_t
+WHERE email = '$_SESSION[userEmail]'";
+    $result = mysqli_query($conn, $user);
+    $phone = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -89,21 +93,24 @@ include 'connect.php';
                 <img src="images/logo.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form">
+            <form method="post" class="login100-form validate-form">
                 <span class="login100-form-title">
                     Product Checkout Form
                 </span>
 
-                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Email">
+                <div class="wrap-input100 " >
+                    <label class="input100" type="text" name="email" > <?php echo $_SESSION['userEmail']; ?>
+                    </label>
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                     </span>
                 </div>
 
-                <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="phone_number" placeholder="Phone Number">
+                <div class="wrap-input100 ">
+                
+
+                    <label class="input100" type="text" name="phone_number" ><?php echo $phone['phone_number'];?> </label>
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-phone" aria-hidden="true"></i>
@@ -111,7 +118,7 @@ include 'connect.php';
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="products" placeholder="Products">
+                    <input class="input100" type="text" name="product" placeholder="Products">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-bag-shopping" aria-hidden="true"></i>
@@ -127,13 +134,27 @@ include 'connect.php';
                 </div>
                 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" style="background-color: #3b4465;">
+                    <button name = "submit" class="login100-form-btn" style="background-color: #3b4465;">
                         Confirm
                     </button>
                 </div>
 
             </form>
         </div>
+        <?php
+        if(isset($_POST['submit'])) {
+            $email = $_SESSION['userEmail'];
+            $phone_number = $phone['phone_number'];
+            $product = $_POST['product'];
+            $quantity = $_POST['quantity'];
+            //echo quantity	user_email	phone_number	product_name	
+
+
+            $orderQuery = "INSERT INTO order_t (quantity, user_email, phone_number, product_name)
+                    VALUES ('$quantity', '$email', '$phone_number', '$product')";
+            $orderTable = mysqli_query($conn, $orderQuery);
+        }
+        ?>
     </div>
 </div>
 

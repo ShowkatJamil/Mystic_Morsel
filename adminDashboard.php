@@ -94,38 +94,45 @@ include 'connect.php';
     </div>
     <!-- End All Title Box -->
 
-    <div id="orderTableDiv">
-        <table border="1">
-            <tr>
-                <th>Order ID</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Product Name</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>tasnimnajifa60@gmail.com</td>
-                <td>01749953292</td>
-                <td>Cinnamon Toast Donut, Japanese Souffle Cheese Cake</td>
-                <td>3, 2</td>
-                <td>BDT 2040.00</td>
-            </tr>
+    <table class="table table-hover text center">
+            <thead class="table-dark">
+                <tr>
+                    <!-- <th scope="col">Backlog ID</th> -->
+                    <th scope="col">Order ID</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Phone Number</th>
 
-            <tr>
-                <td>1</td>
-                <td>showkatjamil2012@gmail.com</td>
-                <td>01521436539</td>
-                <td>Cinnamon Toast Donut, Japanese Souffle Cheese Cake</td>
-                <td>3, 2</td>
-                <td>BDT 2040.00</td>
-            </tr>
-           
-            
-            <!-- Add more rows as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include 'connect.php';
+                // session_start();
+
+                $backlogData = "SELECT *
+                FROM order_t";
+                $result = mysqli_query($conn, $backlogData);
+                // $serial = 1;
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                    <tr>
+                        <!-- <th scope="row">1</th> -->
+                         <td><?php echo $row['order_id']; ?></td> 
+                        <td><?php echo $row['product_name']; ?></td>
+                        <td><?php echo $row['quantity']; ?></td>
+                        <td><?php echo $row['user_email']; ?></td>
+                        <td><?php echo $row['phone_number']; ?></td>
+                    </tr>
+
+                <?php
+                }
+
+                ?>
+
+            </tbody>
         </table>
-    </div>
 
 
     <div class="footer-copyright">

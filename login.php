@@ -1,7 +1,71 @@
 <?php
-include 'connect.php';
-session_start();
-?>
+				include 'connect.php';
+				session_start();
+
+			if (isset($_POST['loginEmail']) && isset($_POST['loginPass'])) {
+				function validate($data){
+					$data = trim($data);
+					$data = stripcslashes($data);
+					$data = htmlspecialchars($data);
+					return $data;
+				}
+			
+				$id = validate($_POST['loginEmail']);
+				$pass = validate($_POST['loginPass']);
+			//if ($_SERVER['REQUEST_METHOD'] == 'POST' && (isset($_POST['submit']) == false)) {
+			if (isset($_POST['submit1'])) {
+
+
+				$email = $_POST['loginEmail'];
+				$password = $_POST['loginPass'];
+
+				// $signEmail = $_POST['signEmail'];
+				// $signPass = $_POST['signPass'];
+				// $phone = $_POST['phone'];
+
+
+				if ($email == 'admin@gmail.com' && $password == '1234') {
+					$sql = "SELECT * from admin_t where email='$email' and password='$password'";
+					$result = mysqli_query($conn, $sql);
+					if ($result) {
+						$num = mysqli_num_rows($result);
+						if ($num > 0) {
+							$invalid = 0;
+							session_start();
+
+							$_SESSION['email'] = $email;
+
+							echo "<script>window.location.href ='adminDashboard.php'</script>";
+							// header('adminDashboard.php');
+							exit();
+						}
+					}
+				} elseif ($email != NULL && $password != NULL) {
+					$sql = "SELECT * from user_t where email='$email' and password='$password'";
+					$result = mysqli_query($conn, $sql);
+					$row = mysqli_fetch_assoc($result);
+					if (mysqli_num_rows($result) === 1) {
+						if ($row['email'] === $email && $row['password'] === $password) {
+							$_SESSION['userEmail'] = $email;
+
+							echo "<script>window.location.href ='index.php'</script>";
+							//header('');
+							exit();
+						}
+					} else {
+						//ask user to give email and pass
+					}
+				} /*elseif ($signEmail != NULL && $signPass != NULL && $phone != NULL) {
+//echo $signEmail;
+$signUpQuery = "INSERT INTO user_t (email, password, phone_number)
+			VALUES ('$signEmail', '$signPass', '$phone')";
+$signUpTable = mysqli_query($conn, $signUpQuery);
+}*/ else {
+					$invalid = 1;
+				}
+			}}
+
+			?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -403,12 +467,6 @@ session_start();
 				</form>
 			</div>
 
-
-
-
-
-
-
 			<?php
 
 			$invalid = 0;
@@ -441,63 +499,9 @@ session_start();
 					<button name="submit2" type="submit" class="btn-signup">Continue</button>
 				</form>
 			</div>
-			<?php
-
-			//if ($_SERVER['REQUEST_METHOD'] == 'POST' && (isset($_POST['submit']) == false)) {
-				if (isset($_POST['submit1'])) {
-
-				include 'connect.php';
-
-				$email = $_POST['loginEmail'];
-				$password = $_POST['loginPass'];
-
-
-				// $signEmail = $_POST['signEmail'];
-				// $signPass = $_POST['signPass'];
-				// $phone = $_POST['phone'];
-
-
-				if ($email == 'admin@gmail.com' && $password == '1234') {
-					$sql = "SELECT * from admin_t where email='$email' and password='$password'";
-					$result = mysqli_query($conn, $sql);
-					if ($result) {
-						$num = mysqli_num_rows($result);
-						if ($num > 0) {
-							$invalid = 0;
-							session_start();
-
-							$_SESSION['email'] = $email;
-
-							echo "<script>window.location.href ='adminDashboard.php'</script>";
-							// header('adminDashboard.php');
-						}
-					}
-				} elseif ($email != NULL && $password != NULL) {
-					$sql = "SELECT * from user_t where email='$email' and password='$password'";
-					$result = mysqli_query($conn, $sql);
-					$row = mysqli_fetch_assoc($result);
-					if (mysqli_num_rows($result) === 1) {
-						if ($row['email'] === $email && $row['password'] === $password) {
-
-							echo "<script>window.location.href ='index.php'</script>";
-							//header('');
-							exit();
-						}
-					} else {
-						//ask user to give email and pass
-					}
-				} /*elseif ($signEmail != NULL && $signPass != NULL && $phone != NULL) {
-//echo $signEmail;
-$signUpQuery = "INSERT INTO user_t (email, password, phone_number)
-			VALUES ('$signEmail', '$signPass', '$phone')";
-$signUpTable = mysqli_query($conn, $signUpQuery);
-}*/ else {
-					$invalid = 1;
-				}
-			}
-
-			elseif (isset($_POST['submit2'])) {
-			//elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && $invalid == 0) {
+			<?php 
+			 if (isset($_POST['submit2'])) {
+				//elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && $invalid == 0) {
 				$signEmail = $_POST['signEmail'];
 				$signPass = $_POST['signPass'];
 				$phone = $_POST['phone'];
@@ -508,8 +512,8 @@ $signUpTable = mysqli_query($conn, $signUpQuery);
 				$signUpTable = mysqli_query($conn, $signUpQuery);
 				//header("Location: login.php");
 				$ck = 1;
+				exit();
 			}
-
 			?>
 		</div>
 	</section>

@@ -5,7 +5,7 @@ include 'connect.php';
 
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,8 +53,8 @@ include 'connect.php';
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
+                        <i class="fa fa-bars"></i>
+                    </button>
                     <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt="" width="60px"></a>
                 </div>
                 <!-- End Header Navigation -->
@@ -74,7 +74,7 @@ include 'connect.php';
         <!-- End Navigation -->
     </header>
 
-        <!-- End Main Top -->
+    <!-- End Main Top -->
 
 
     <!-- Start All Title Box -->
@@ -102,7 +102,7 @@ include 'connect.php';
                 <th>Product Price</th>
                 <th>Update</th>
             </tr>
-            <tr>
+            <tr method="POST">
                 <td><input type="file"></td>
                 <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
                 <td><input type="text" value="3, 2"></td>
@@ -140,12 +140,123 @@ include 'connect.php';
                 <td><input type="text" value="BDT 2040.00"></td>
                 <td><button class="btn-update">Update</button></td>
             </tr>
-            
+
             <!-- Add more rows as needed -->
         </table>
+        <form method="post">
+            <table>
+                <tr>
+                    <td><input type="file"></td>
+                    <td><input type="text" name="name1"></td>
+                    <td><input type="text" name="description1"></td>
+                    <td><input type="text" name="price1"></td>
+                    <td><button type="submit" name="submit1" class="btn-update">Update</button></td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="Submit"> -->
+        </form>
+        <form method="post">
+            <table>
+                <tr>
+                    <td><input type="file"></td>
+                    <td><input type="text" name="name2"></td>
+                    <td><input type="text" name="description2"></td>
+                    <td><input type="text" name="price2"></td>
+                    <td><button type="submit" name="submit2" class="btn-update">Update</button></td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="Submit"> -->
+        </form>
+        <form method="post">
+            <table>
+                <tr>
+                    <td><input type="file"></td>
+                    <td><input type="text" name="name3"></td>
+                    <td><input type="text" name="description3"></td>
+                    <td><input type="text" name="price3"></td>
+                    <td><button type="submit" name="submit3" class="btn-update">Update</button></td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="Submit"> -->
+        </form>
+        <form method="post">
+            <table>
+                <tr>
+                    <td><input type="file"></td>
+                    <td><input type="text" name="name4"></td>
+                    <td><input type="text" name="description4"></td>
+                    <td><input type="text" name="price4"></td>
+                    <td><button type="submit" name="submit4" class="btn-update">Update</button></td>
+                </tr>
+            </table>
+            <!-- <input type="submit" value="Submit"> -->
+        </form>
+
+
     </div>
-    
-    
+    <?php
+
+    if (isset($_POST['submit1'])) {
+
+        include 'connect.php';
+
+        $name1 = $_POST['name1'];
+        $description1 = $_POST['description1'];
+        $price1 = $_POST['price1'];
+
+        if (true) {
+            $sql = "UPDATE product_t 
+                            SET product_name = '$name1', product_description = '$description1', product_price = '$price1'
+                            WHERE product_id = 1";
+            $result = mysqli_query($conn, $sql);
+        }
+    } elseif (isset($_POST['submit2'])) {
+
+        include 'connect.php';
+
+        $name1 = $_POST['name2'];
+        $description1 = $_POST['description2'];
+        $price1 = $_POST['price2'];
+
+        if (true) {
+            $sql = "UPDATE product_t 
+                            SET product_name = '$name1', product_description = '$description1', product_price = '$price1'
+                            WHERE product_id = 2";
+            $result = mysqli_query($conn, $sql);
+        }
+    } elseif (isset($_POST['submit3'])) {
+
+        include 'connect.php';
+
+        $name1 = $_POST['name3'];
+        $description1 = $_POST['description3'];
+        $price1 = $_POST['price3'];
+
+        if (true) {
+            $sql = "UPDATE product_t 
+                            SET product_name = '$name1', product_description = '$description1', product_price = '$price1'
+                            WHERE product_id = 3";
+            $result = mysqli_query($conn, $sql);
+        } elseif (isset($_POST['submit4'])) {
+
+            include 'connect.php';
+
+            $name1 = $_POST['name4'];
+            $description1 = $_POST['description4'];
+            $price1 = $_POST['price4'];
+
+            if (true) {
+                $sql = "UPDATE product_t 
+                                SET product_name = '$name1', product_description = '$description1', product_price = '$price1'
+                                WHERE product_id = 4";
+                $result = mysqli_query($conn, $sql);
+            }
+        }
+    }
+
+    ?>
+
+
 
 
     <div class="footer-copyright">
@@ -174,4 +285,3 @@ include 'connect.php';
 </body>
 
 </html>
-

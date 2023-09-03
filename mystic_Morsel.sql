@@ -79,11 +79,13 @@ CREATE TABLE `news_letter_t` (
 --
 
 CREATE TABLE `order_t` (
-  `order_id` varchar(32) NOT NULL,
+  `order_id` INTEGER NOT NULL AUTO_INCREMENT,
   `quantity` int(32) NOT NULL,
   `user_email` varchar(32) NOT NULL,
   `phone_number` varchar(32) NOT NULL,
-  `product_name` varchar(100) NOT NULL
+  `product_name` varchar(100) NOT NULL,
+  CONSTRAINT order_PK PRIMARY KEY (order_id)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -93,9 +95,12 @@ CREATE TABLE `order_t` (
 --
 
 CREATE TABLE `product_t` (
+  `product_id` INTEGER NOT NULL AUTO_INCREMENT,
   `product_name` varchar(200) NOT NULL,
   `product_description` varchar(200) NOT NULL,
-  `product_price` varchar(200) NOT NULL
+  `product_price` varchar(200) NOT NULL,
+  CONSTRAINT product_PK PRIMARY KEY (product_id)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -137,9 +142,6 @@ INSERT INTO `user_t` (`email`, `password`, `phone_number`) VALUES
 --
 -- Indexes for table `order`
 --
-ALTER TABLE `order_t`
-  ADD PRIMARY KEY (`order_id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
