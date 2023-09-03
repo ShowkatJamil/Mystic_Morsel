@@ -36,10 +36,3 @@ Mystic Morsel is an online cake and donut shop. It has a user and admin interfac
 - [Lubaina Ali](https://github.com/Lubaina21)
 - [Ashim Saha](https://github.com/HelloAshim)
 
-
-
-
-
-## Screenshots
-![](uploadBacklogDataForGit.PNG)
-![](viewBacklogDataForGit.PNG)
