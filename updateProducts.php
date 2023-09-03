@@ -102,51 +102,13 @@ include 'connect.php';
                 <th>Product Price</th>
                 <th>Update</th>
             </tr>
-            <tr method="POST">
-                <td><input type="file"></td>
-                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
-                <td><input type="text" value="3, 2"></td>
-                <td><input type="text" value="BDT 2040.00"></td>
-                <td><button class="btn-update">Update</button></td>
-            </tr>
-
-            <tr>
-                <td><input type="file"></td>
-                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
-                <td><input type="text" value="3, 2"></td>
-                <td><input type="text" value="BDT 2040.00"></td>
-                <td><button class="btn-update">Update</button></td>
-            </tr>
-
-            <tr>
-                <td><input type="file"></td>
-                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
-                <td><input type="text" value="3, 2"></td>
-                <td><input type="text" value="BDT 2040.00"></td>
-                <td><button class="btn-update">Update</button></td>
-            </tr>
-
-            <tr>
-                <td><input type="file"></td>
-                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
-                <td><input type="text" value="3, 2"></td>
-                <td><input type="text" value="BDT 2040.00"></td>
-                <td><button class="btn-update">Update</button></td>
-            </tr>
-            <tr>
-                <td><input type="file"></td>
-                <td><input type="text" value="Cinnamon Toast Donut, Japanese Souffle Cheese Cake"></td>
-                <td><input type="text" value="3, 2"></td>
-                <td><input type="text" value="BDT 2040.00"></td>
-                <td><button class="btn-update">Update</button></td>
-            </tr>
 
             <!-- Add more rows as needed -->
         </table>
         <form method="post">
             <table>
                 <tr>
-                    <td><input type="file"></td>
+                    <td style="width: 60px;"><input type="file"></td>
                     <td><input type="text" name="name1"></td>
                     <td><input type="text" name="description1"></td>
                     <td><input type="text" name="price1"></td>
@@ -158,7 +120,7 @@ include 'connect.php';
         <form method="post">
             <table>
                 <tr>
-                    <td><input type="file"></td>
+                    <td style="width: 60px;"><input type="file"></td>
                     <td><input type="text" name="name2"></td>
                     <td><input type="text" name="description2"></td>
                     <td><input type="text" name="price2"></td>
@@ -170,7 +132,7 @@ include 'connect.php';
         <form method="post">
             <table>
                 <tr>
-                    <td><input type="file"></td>
+                    <td style="width: 60px;"><input type="file"></td>
                     <td><input type="text" name="name3"></td>
                     <td><input type="text" name="description3"></td>
                     <td><input type="text" name="price3"></td>
@@ -182,7 +144,7 @@ include 'connect.php';
         <form method="post">
             <table>
                 <tr>
-                    <td><input type="file"></td>
+                    <td style="width: 60px;"><input type="file"></td>
                     <td><input type="text" name="name4"></td>
                     <td><input type="text" name="description4"></td>
                     <td><input type="text" name="price4"></td>
